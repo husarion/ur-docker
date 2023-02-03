@@ -3,6 +3,7 @@ set -e
 
 echo "turning on AUX power"
 rosservice call /panther/hardware/aux_power_enable "data: true"
+rosservice call /panther/manager/overwrite_fan_control "data: true"
 
 echo "Waiting for UR robot ..."
 while ! ping -c 1 -n -w 1 10.15.20.4 &> /dev/null
