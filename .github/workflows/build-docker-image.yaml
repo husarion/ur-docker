@@ -37,4 +37,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/arm64, linux/amd64
           push: true
-          tags: husarion/ur5e:noetic
+          tags: husarion/ur:noetic

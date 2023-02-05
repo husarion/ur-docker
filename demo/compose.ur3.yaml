@@ -1,8 +1,7 @@
 services:
 
   ur-driver:
-    # image: husarion/ur5e:melodic
-    build: ./../
+    image: husarion/ur5e:noetic
     container_name: ur-drive
     restart: on-failure
     network_mode: host
@@ -10,9 +9,6 @@ services:
     environment:
       - ROS_IP=10.15.20.3
       - ROS_MASTER_URI=http://10.15.20.2:11311
-    volumes:
-      - ./../ur3_moveit_config:/ros_ws/src/ur3_moveit_config
-      - ./../ur_bringup:/ros_ws/src/ur_bringup
     command: >
       roslaunch ur_bringup ur3_bringup.launch 
         robot_ip:=10.15.20.202

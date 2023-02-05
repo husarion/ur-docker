@@ -1,8 +1,7 @@
 services:
 
   ur-gazebo:
-    # image: husarion/ur5e:melodic
-    build: ./../../
+    image: husarion/ur5e:noetic
     container_name: ur-gazebo
     restart: on-failure
     runtime: nvidia
