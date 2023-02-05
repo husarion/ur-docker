@@ -1,0 +1,15 @@
+services:
+
+  ur-driver:
+    image: husarion/ur5e:noetic
+    container_name: ur-drive
+    restart: on-failure
+    network_mode: host
+    ipc: host
+    environment:
+      - ROS_IP=10.15.20.3
+      - ROS_MASTER_URI=http://10.15.20.2:11311
+    command: >
+      roslaunch ur_bringup ur5e_rg2_bringup.launch 
+        robot_ip:=10.15.20.4
+        kinematics_config:=/ros_ws/src/ur_bringup/config/ur5e_calibration.yaml
