@@ -14,8 +14,5 @@ services:
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility,display
     volumes:
-      - ./../ur5e_moveit_config:/ros_ws/src/ur5e_moveit_config
-      - ./../ur3_moveit_config:/ros_ws/src/ur3_moveit_config
-      - ./../ur5e_onrobot_rg2_moveit_config:/ros_ws/src/ur5e_onrobot_rg2_moveit_config
-      - ./../ur_components_description:/ros_ws/src/ur_components_description
+      - ./ur5e_moveit_config:/ros_ws/src/ur5e_moveit_config
     command: roslaunch moveit_setup_assistant setup_assistant.launch
