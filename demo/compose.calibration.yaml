@@ -1,8 +1,7 @@
 services:
 
   ur-configuration:
-    # image: husarion/ur5e:melodic
-    build: ./..
+    image: husarion/ur:noetic
     container_name: ur-configuration
     restart: on-failure
     network_mode: host

@@ -1,8 +1,7 @@
 services:
 
   ur-moveit-menager:
-    # image: husarion/ur5e:melodic
-    build: ./..
+    image: husarion/ur:noetic
     container_name: ur-moveit-menager
     restart: on-failure
     network_mode: host

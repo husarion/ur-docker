@@ -1,7 +1,7 @@
 services:
 
   ur-gazebo:
-    image: husarion/ur5e:noetic
+    image: husarion/ur:noetic
     container_name: ur-gazebo
     restart: on-failure
     runtime: nvidia
@@ -17,3 +17,16 @@ services:
     command: >
       roslaunch ur_bringup ur5e_rg2_gazebo.launch
         use_rviz:=true
+    
+  rg2-driver:
+    image: husarion/onrobot-rg2:noetic
+    container_name: rg2-onrobot-driver
+    restart: on-failure
+    network_mode: host
+    ipc: host
+    tty: true
+    environment:
+      - ROS_IP=10.15.20.3
+      - ROS_MASTER_URI=http://10.15.20.2:11311
+    command: >
+      roslaunch onrobot_rg2_driver bringup.launch
