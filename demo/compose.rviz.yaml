@@ -1,7 +1,7 @@
 services:
 
   rviz:
-    image: husarion/ur5e:noetic
+    image: husarion/ur:noetic
     container_name: rviz
     restart: on-failure
     network_mode: host
