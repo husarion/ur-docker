@@ -1,8 +1,8 @@
 services:
 
-  ur-configuration:
+  ur-calibration:
     image: husarion/ur:noetic
-    container_name: ur-configuration
+    container_name: ur-calibration
     restart: on-failure
     network_mode: host
     privileged: true
