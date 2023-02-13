@@ -21,9 +21,9 @@ Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puc
 
 You can find more information on how to operate the gripper [here](https://github.com/husarion/ur-onrobot-rg2-docker).
 
-# Quick start (with a physical Panther and UR)
+# Quick Start (With a Physical Panther and UR)
 
-## Customize your moveit_config package
+## Customize Your `moveit_config` Package
 The docker configurations shown here are example use cases where the URxx manipulator is controlled using the Moveit package. You can customize them as follows:
 1. Customize the `.urdf` file found in the reference package (e.g. [urdf/panther_ur5e.urdf.xacro](https://github.com/husarion/ur_ros/blob/main/ur5e_moveit_config/urdf/panther_ur5e.urdf.xacro)) 
    
@@ -41,7 +41,7 @@ The docker configurations shown here are example use cases where the URxx manipu
 3. Select the reference package and [generate](http://docs.ros.org/en/hydro/api/moveit_setup_assistant/html/doc/tutorial.html) the necessary files based on the new file.
 4. Build a docker image with this package copied to `/ros_ws/src/<package_name>` path.
 
-## Setup the robot system
+## Setup the Robot System
 Connect to the robot's WiFi network and connect via `ssh` to the internal computer. 
 
 On the internal computer of the Panther robot (HP Z2 or Intel NUC) run `demo/power_on_ur_controller.sh`:
@@ -50,7 +50,7 @@ On the internal computer of the Panther robot (HP Z2 or Intel NUC) run `demo/pow
 ``` 
 
 This operation will turn on the AUX, thus powering up the control unit of UR manipulator.
-## Calibration (only on the first startup)
+## Calibration (Only on the First Startup)
 URxx robot driver needs a calibration file. You can get this using `demo/compose.calibration.yaml` file:
 ```bash
 cd ./demo
@@ -88,7 +88,7 @@ xtightserver 10.15.20.4
     docker compose up -f compose.real-case.yaml
     ```
 
-# Quick start (Gazebo-classic simulation)
+# Quick Start (Gazebo-classic Simulation)
 1. If there is a need then modify the sample package ([link](#customize-your-moveit_config-package)).
 2. Choose your case directory and type:
 ```bash
