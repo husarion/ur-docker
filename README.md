@@ -1,5 +1,5 @@
 # ur-docker
-Docker image with ROS packages from ur_ros repo. 
+Docker image with ROS packages from [ur_ros](https://github.com/husarion/ur_ros) repo. 
 
 Here, you will find a series of examples demonstrating the capabilities of the Panther mobile robot equipped with a UR3 or UR5e manipulator and various widely used components in the robotics industry, such as LIDARs, depth cameras, and more. Each scenario will provide a clear demonstration of the possibilities for integrating these components into real-world applications.
 
@@ -23,7 +23,7 @@ You can find more information on how to operate the gripper [here](https://githu
 
 # Quick Start (With a Physical Panther and UR)
 
-## Customize Your `moveit_config` Package
+## Customize Your `moveit_config` Package (optional)
 The docker configurations shown here are example use cases where the URxx manipulator is controlled using the Moveit package. You can customize them as follows:
 1. Customize the `.urdf` file found in the reference package (e.g. [urdf/panther_ur5e.urdf.xacro](https://github.com/husarion/ur_ros/blob/main/ur5e_moveit_config/urdf/panther_ur5e.urdf.xacro)) 
    
@@ -62,7 +62,7 @@ docker compose -f compose.calibration.yaml up
 > ```bash
 > xtightserver 10.15.20.4
 > ```
-> Then, an icon signed as `remote control` should appear in the upper right corner of the GUI. Otherwise, you can change it by clicking and selecting the appropriate option.
+> Then, an icon signed as `remote control` should appear in the upper right corner of the GUI. Otherwise, most likely if it is `local` mode, you can change it by clicking and selecting the appropriate option.
 ## Docker Configuration Start-Up
 To run all necessary nodes use docker configuration (i.e. for UR5e with RG2 gripper):
 ```bash
@@ -71,6 +71,11 @@ docker compose up -f compose.real-case.yaml
 ```
 
 In your browser, go to this [link](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate UR5e.
+
+> **Warning** 
+> 
+> If you activate the e-stop mode on the Panther, it will cause the UR manipulator to stop as well. If the manipulator had any command sent to it, it will immediately stop. After you turn off the e-stop mode on the Panther, the UR manipulator will automatically resume its operation.
+
 ## Alternate Start-Up Method
 
 1. On a computer connected to Panther's wifi network, type:
@@ -87,6 +92,7 @@ xtightserver 10.15.20.4
     ```bash
     docker compose up -f compose.real-case.yaml
     ```
+8. In your browser, go to this [link](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate UR5e.
 
 # Quick Start (Gazebo-classic Simulation)
 1. If there is a need then modify the sample package ([link](#customize-your-moveit_config-package)).
