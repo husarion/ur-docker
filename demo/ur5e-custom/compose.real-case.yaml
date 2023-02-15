@@ -10,7 +10,7 @@ services:
       - ROS_IP=10.15.20.3
       - ROS_MASTER_URI=http://10.15.20.2:11311
     volumes:
-      - ./ur_calibration:/ur_calibration
+      - ./../ur_calibration:/ur_calibration
     command: >
       roslaunch ur_bringup ur5e_bringup.launch 
         robot_ip:=10.15.20.4

@@ -1,8 +1,8 @@
 services:
 
-  ur-gazebo:
+  ur5e-rg2-gazebo:
     image: husarion/ur:noetic
-    container_name: ur-gazebo
+    container_name: ur5e-rg2-gazebo
     restart: on-failure
     runtime: nvidia
     tty: true
