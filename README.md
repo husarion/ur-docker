@@ -42,14 +42,20 @@ The docker configurations shown here are example use cases where the URxx manipu
 4. Build a docker image with this package copied to `/ros_ws/src/<package_name>` path.
 
 ## Setup the Robot System
-Connect to the robot's WiFi network and connect via `ssh` to the internal computer. 
+1. Connect to the robot's WiFi network and connect via `ssh` to the internal computer. On the internal computer of the Panther robot (HP Z2 or Intel NUC) run `demo/power_on_ur_controller.sh`:
+    ```bash
+    ./demo/power_on_ur_controller.sh
+    ``` 
+    This operation will turn on the AUX, thus powering up the control unit of UR manipulator.
 
-On the internal computer of the Panther robot (HP Z2 or Intel NUC) run `demo/power_on_ur_controller.sh`:
-```bash
-./demo/power_on_ur_controller.sh
-``` 
-
-This operation will turn on the AUX, thus powering up the control unit of UR manipulator.
+2. Check if internal Panther computer (Intel NUC or HP Z2) can share a virtual desktop. To do this, check that the `/tmp/.X11-unix/` folder is empty. 
+    ```bash
+    ls /tmp/.X11-unix/
+    ```
+    If it is, then run the following script :
+    ```bash
+    ./demo/setup_virtual_desktop.sh
+    ```
 ## Calibration (Only on the First Startup)
 URxx robot driver needs a calibration file. You can get this using `demo/compose.calibration.yaml` file:
 ```bash
