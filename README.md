@@ -81,7 +81,7 @@ cd ./demo/ur5e-onrobot-rg2
 docker compose up -f compose.real-case.yaml
 ```
 
-In your browser, go to this [link](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate UR5e.
+In your browser, go to [10.15.20.3:8080/vnc.html](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate UR5e.
 
 > **Warning** 
 > 
