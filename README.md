@@ -16,6 +16,7 @@ Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puc
 > **Note** 💡
 >
 > This example includes a control unit outside the Panther robot workspace, but we also offer the option to place it inside the workspace.
+
 ## [UR5e-onrobot-rg2](./demo/ur5e-onrobot-rg2/)
 
 Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, Zed2i camera, and Onrobot RG2 gripper. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package) based on [ur5e_onrobot_rg2_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_onrobot_rg2_moveit_config), making it possible to personalize robot setup.
