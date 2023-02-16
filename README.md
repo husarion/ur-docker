@@ -7,7 +7,7 @@ Here, you will find a series of examples demonstrating the capabilities of the P
 
 ## [UR3](./demo/ur3/)
 
-Docker image is utilized to run or simulate the Panther robot equipped with a UR3 manipulator. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package) based on [ur3_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur3_moveit_config), making it possible to personalize robot setup.
+Docker image is utilized to run or simulate the Panther robot equipped with a UR3 manipulator. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur3_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur3_moveit_config), making it possible to personalize robot setup.
 
 ## [UR5e-custom](./demo/ur5e-custom/)
 
