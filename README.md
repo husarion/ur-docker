@@ -61,6 +61,7 @@ The docker configurations shown here are example use cases where the URxx manipu
     ./demo/setup_virtual_desktop.sh
     ```
 ## Calibration (Only on the First Startup)
+
 URxx robot driver needs a calibration file. You can get this using `demo/compose.calibration.yaml` file:
 ```bash
 cd ./demo
