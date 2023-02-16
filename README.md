@@ -11,7 +11,7 @@ Docker image is utilized to run or simulate the Panther robot equipped with a UR
 
 ## [UR5e-custom](./demo/ur5e-custom/)
 
-Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, and Realsense d435i camera. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package) based on [ur5e_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_moveit_config), making it possible to personalize robot setup.
+Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, and Realsense d435i camera. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur5e_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_moveit_config), making it possible to personalize robot setup.
 
 > **Note** 💡
 >
