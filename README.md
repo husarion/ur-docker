@@ -26,6 +26,7 @@ You can find more information on how to operate the gripper [here](https://githu
 # Quick Start (With a Physical Panther and UR)
 
 ## Customize Your `moveit_config` Package (optional)
+
 The docker configurations shown here are example use cases where the URxx manipulator is controlled using the Moveit package. You can customize them as follows:
 1. Customize the `.urdf` file found in the reference package (e.g. [urdf/panther_ur5e.urdf.xacro](https://github.com/husarion/ur_ros/blob/main/ur5e_moveit_config/urdf/panther_ur5e.urdf.xacro)) 
    
