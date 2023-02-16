@@ -106,7 +106,8 @@ xtightserver 10.15.20.4
 8. In your browser, go to this [link](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate UR5e.
 
 # Quick Start (Gazebo-classic Simulation)
-1. If there is a need then modify the sample package ([link](#customize-your-moveit_config-package)).
+
+1. If there is a need then modify the sample package ([link](#customize-your-moveit_config-package-optional)).
 2. Choose your case directory and type:
 ```bash
 xhost local:docker
