@@ -45,6 +45,7 @@ The docker configurations shown here are example use cases where the URxx manipu
 4. Build a docker image with this package copied to `/ros_ws/src/<package_name>` path.
 
 ## Setup the Robot System
+
 1. Connect to the robot's WiFi network and connect via `ssh` to the internal computer. On the internal computer of the Panther robot (HP Z2 or Intel NUC) run `demo/power_on_ur_controller.sh`:
     ```bash
     ./demo/power_on_ur_controller.sh
