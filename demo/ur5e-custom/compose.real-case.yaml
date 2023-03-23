@@ -37,7 +37,6 @@ services:
     restart: on-failure
     network_mode: host
     ipc: host
-    privileged: true
     environment:
       - DISPLAY
       - LIBGL_ALWAYS_SOFTWARE=1
