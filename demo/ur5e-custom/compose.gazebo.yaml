@@ -20,6 +20,7 @@ services:
     container_name: ur5e-gazebo
     restart: on-failure
     tty: true
+    #<<: *nvidia-config
     <<: *common-config
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
