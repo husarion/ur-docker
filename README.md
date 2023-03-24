@@ -103,7 +103,7 @@ xtightserver 10.15.20.4
 6. Change the robot mode back to `remote`.
 7. On the internal computer, type:
     ```bash
-    docker compose up -f compose.real-case.yaml
+    docker compose -f compose.real-case.yaml up
     ```
 8. In your browser, go to [10.15.20.3:8080/vnc.html](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate URxx.
 
