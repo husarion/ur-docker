@@ -1,17 +1,21 @@
 # ur-docker
 Docker image with ROS packages from [ur_ros](https://github.com/husarion/ur_ros) repo. 
 
-Here, you will find a series of examples demonstrating the capabilities of the Panther mobile robot equipped with a UR3 or UR5e manipulator and various widely used components in the robotics industry, such as LIDARs, depth cameras, and more. Each scenario will provide a clear demonstration of the possibilities for integrating these components into real-world applications.
+<p align="center">
+  <img alt="Panther UR5e preview" src="https://github-readme-figures.s3.eu-central-1.amazonaws.com/panther/ur-docker/panther_with_ur_move.gif" >
+</p>
+
+Here, you will find a series of examples demonstrating the capabilities of the Panther mobile robot equipped with a UR3e or UR5e manipulator and various widely used components in the robotics industry, such as LIDARs, depth cameras, and more. Each scenario will provide a clear demonstration of the possibilities for integrating these components into real-world applications.
 
 # Demo Applications
 
-## [UR3](./demo/ur3/)
+## [UR3e](./demo/ur3e/)
 
-Docker image is utilized to run or simulate the Panther robot equipped with a UR3 manipulator. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur3_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur3_moveit_config), making it possible to personalize robot setup.
+This Docker image allows you to run or simulate the Panther robot equipped with a UR3e manipulator. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur3e_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur3e_moveit_config), making it possible to personalize robot setup.
 
 ## [UR5e-custom](./demo/ur5e-custom/)
 
-Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, and Realsense d435i camera. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur5e_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_moveit_config), making it possible to personalize robot setup.
+With this Docker image, you can run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, and Realsense d435i camera. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur5e_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_moveit_config), making it possible to personalize robot setup.
 
 > **Note** 💡
 >
@@ -19,7 +23,7 @@ Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puc
 
 ## [UR5e-onrobot-rg2](./demo/ur5e-onrobot-rg2/)
 
-Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, Zed2i camera, and OnRobot RG2 gripper. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur5e_onrobot_rg2_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_onrobot_rg2_moveit_config), making it possible to personalize robot setup.
+This Docker image enables you to run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puck LiDAR, Zed2i camera, and OnRobot RG2 gripper. Moveit Wizard Manager can be used to create a [custom package](#customize-your-moveit_config-package-optional) based on [ur5e_onrobot_rg2_moveit_config](https://github.com/husarion/ur_ros/tree/main/ur5e_onrobot_rg2_moveit_config), making it possible to personalize robot setup.
 
 > **Note** 💡
 >
@@ -27,23 +31,21 @@ Run or simulate the Panther robot equipped with a UR5e manipulator, Velodyne Puc
 
 # Quick Start (With a Physical Panther and UR)
 
-## Customize Your `moveit_config` Package (optional)
+## Customize Your `moveit_config` Package (**optional**)
 
 The docker configurations shown here are example use cases where the URxx manipulator is controlled using the Moveit package. You can customize them as follows:
 1. Customize the `.urdf` file found in the reference package (e.g. [urdf/panther_ur5e.urdf.xacro](https://github.com/husarion/ur_ros/blob/main/ur5e_moveit_config/urdf/panther_ur5e.urdf.xacro)) 
-   
-2. Run docker compose:
+
+2. Specify the volume relative path to your reference package in [compose](demo/compose.moveit-menager.yaml#L10) file. 
+
+3. Run docker compose:
     ```bash
     cd ./demo
     xhost local:docker
 
     docker compose -f compose.moveit-menager.yaml up
-    ```
-    > **Note** 💡
-    >
-    > You need to specify the volume path to your reference package in [compose](https://github.com/husarion/ur-docker/blob/9bf6dfb80d2dac7b4e5c7fb9835e1a80c7d3afe6/demo/compose.moveit-menager.yaml#L17) file. 
 
-3. Select the reference package and [generate](http://docs.ros.org/en/hydro/api/moveit_setup_assistant/html/doc/tutorial.html) the necessary files based on the new file.
+3. In the MoveIt Setup Assistant window, select the reference package and [generate](http://docs.ros.org/en/hydro/api/moveit_setup_assistant/html/doc/tutorial.html) the necessary files based on the new file.
 4. Build a docker image with this package copied to `/ros_ws/src/<package_name>` path.
 
 ## Setup the Robot System
@@ -99,13 +101,13 @@ xtightserver 10.15.20.4
 2. Click the red button in the lower-left corner of the GUI.
 3. Power on the robot and release the brakes.
 4. Change the robot mode to `local` (the upper right corner of the GUI).
-5. Go to `program` and run `external_control` URcap. If you use Onrobot RG2 gripper you shoud run `husarion_ext_control.urp` program. If it did not come with the robot then you can find it [here](https://github.com/husarion/ur-onrobot-rg2-docker/tree/main/ur-programs). Simply connect to the robot, for example, using `sftp` (`sftp root@10.15.20.4`, default password: `husarion`) and move them to the `/programs` folder 
+5. Go to `program` and run `external_control` URcap. This URcap should be installed, but you should configure your installation so that the control unit is a computer with IP address `10.15.20.3` ([setup guide](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_e_series.md)). If you use Onrobot RG2 gripper you shoud run `husarion_ext_control.urp` program. If it did not come with the robot then you can find it [here](https://github.com/husarion/ur-onrobot-rg2-docker/tree/main/ur-programs). Simply connect to the robot, for example, using `sftp` (`sftp root@10.15.20.4`, default password: `husarion`) and move them to the `/programs` folder 
 6. Change the robot mode back to `remote`.
 7. On the internal computer, type:
     ```bash
-    docker compose up -f compose.real-case.yaml
+    docker compose -f compose.real-case.yaml up
     ```
-8. In your browser, go to this [link](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate UR5e.
+8. In your browser, go to [10.15.20.3:8080/vnc.html](http://10.15.20.3:8080/vnc.html) and use Rviz to manipulate URxx.
 
 # Quick Start (Gazebo-classic Simulation)
 
@@ -115,3 +117,6 @@ xtightserver 10.15.20.4
 xhost local:docker
 docker compose -f compose.gazebo.yaml up
 ```
+> **Note** 💡
+>
+> You can use Nvidia drivers. To do this, change `common-config` to `nvidia-config` in [compose file](./demo/ur5e-custom/compose.gazebo.yaml#L23).

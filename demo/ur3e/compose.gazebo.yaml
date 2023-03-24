@@ -15,9 +15,9 @@ x-nvidia-config:
 
 services:
 
-  ur5e-rg2-gazebo:
+  ur3e-gazebo:
     image: husarion/ur:noetic
-    container_name: ur5e-rg2-gazebo
+    container_name: ur3e-gazebo
     restart: on-failure
     tty: true
     #<<: *nvidia-config
@@ -25,5 +25,5 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
     command: >
-      roslaunch ur_bringup ur5e_rg2_gazebo.launch
+      roslaunch ur_bringup ur3e_gazebo.launch
         use_rviz:=true

@@ -35,13 +35,9 @@ services:
     restart: on-failure
     network_mode: host
     ipc: host
-    privileged: true
-    runtime: nvidia
     environment:
       - DISPLAY
       - LIBGL_ALWAYS_SOFTWARE=1
-      - NVIDIA_VISIBLE_DEVICES=all
-      - NVIDIA_DRIVER_CAPABILITIES=all
       - ROS_IP=10.15.20.3
       - ROS_MASTER_URI=http://10.15.20.2:11311
     volumes:

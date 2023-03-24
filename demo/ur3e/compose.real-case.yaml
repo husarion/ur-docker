@@ -6,14 +6,15 @@ services:
     restart: on-failure
     network_mode: host
     ipc: host
+    tty: true
     environment:
       - ROS_IP=10.15.20.3
       - ROS_MASTER_URI=http://10.15.20.2:11311
     volumes:
       - ./../ur_calibration:/ur_calibration
     command: >
-      roslaunch ur_bringup ur3_bringup.launch 
-        robot_ip:=10.15.20.202
+      roslaunch ur_bringup ur3e_bringup.launch 
+        robot_ip:=10.15.20.4
         kinematics_config:=/ur_calibration/ur_calibration.yaml
 
   rviz:
@@ -22,7 +23,6 @@ services:
     restart: on-failure
     network_mode: host
     ipc: host
-    privileged: true
     environment:
       - DISPLAY
       - LIBGL_ALWAYS_SOFTWARE=1
