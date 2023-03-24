@@ -99,7 +99,7 @@ xtightserver 10.15.20.4
 2. Click the red button in the lower-left corner of the GUI.
 3. Power on the robot and release the brakes.
 4. Change the robot mode to `local` (the upper right corner of the GUI).
-5. Go to `program` and run `external_control` URcap. This URcap should be installed, but you should configure your installation so that the control unit is a computer with IP address `10.15.20.3` ([setup guide](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_e_series.md)). <br> If you use Onrobot RG2 gripper you shoud run `husarion_ext_control.urp` program. If it did not come with the robot then you can find it [here](https://github.com/husarion/ur-onrobot-rg2-docker/tree/main/ur-programs). Simply connect to the robot, for example, using `sftp` (`sftp root@10.15.20.4`, default password: `husarion`) and move them to the `/programs` folder 
+5. Go to `program` and run `external_control` URcap. This URcap should be installed, but you should configure your installation so that the control unit is a computer with IP address `10.15.20.3` ([setup guide](https://github.com/UniversalRobots/Universal_Robots_ROS_Driver/blob/master/ur_robot_driver/doc/install_urcap_e_series.md)). If you use Onrobot RG2 gripper you shoud run `husarion_ext_control.urp` program. If it did not come with the robot then you can find it [here](https://github.com/husarion/ur-onrobot-rg2-docker/tree/main/ur-programs). Simply connect to the robot, for example, using `sftp` (`sftp root@10.15.20.4`, default password: `husarion`) and move them to the `/programs` folder 
 6. Change the robot mode back to `remote`.
 7. On the internal computer, type:
     ```bash
