@@ -117,4 +117,4 @@ docker compose -f compose.gazebo.yaml up
 ```
 > **Note** 💡
 >
-> You can use Nvidia drivers. To do this, change `common-config` to `nvidia-config` in [compose](./demo/ur5e-custom/compose.gazebo.yaml#L23) file
+> You can use Nvidia drivers. To do this, change `common-config` to `nvidia-config` in [compose file](./demo/ur5e-custom/compose.gazebo.yaml#L23).
