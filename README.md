@@ -1,7 +1,9 @@
 # ur-docker
 Docker image with ROS packages from [ur_ros](https://github.com/husarion/ur_ros) repo. 
 
-![Alt Text](https://github-readme-figures.s3.eu-central-1.amazonaws.com/panther/ur-docker/panther_ur_rg2_move.gif)
+<p align="center">
+  <img alt="Panther UR5e preview" src="https://github-readme-figures.s3.eu-central-1.amazonaws.com/panther/ur-docker/panther_with_ur_move.gif" >
+</p>
 
 Here, you will find a series of examples demonstrating the capabilities of the Panther mobile robot equipped with a UR3e or UR5e manipulator and various widely used components in the robotics industry, such as LIDARs, depth cameras, and more. Each scenario will provide a clear demonstration of the possibilities for integrating these components into real-world applications.
 
