@@ -91,7 +91,6 @@ docker compose -f compose.calibration.yaml up
 > ```
 >
 > Then, an icon signed as `remote control` should appear in the upper right corner of the GUI. Otherwise, most likely if it is `local` mode, you can change it by clicking and selecting the appropriate option.
->
 ## Docker Configuration Start-Up
 
 To run all necessary nodes use docker configuration (i.e. for UR5e with RG2 gripper):
