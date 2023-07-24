@@ -70,7 +70,7 @@ The docker configurations shown here are example use cases where the URxx manipu
     If it is, then run the following script :
 
     ```bash
-    ./demo/setup_virtual_desktop.sh
+    source ./demo/setup_virtual_desktop.sh
     ```
 
 ## Calibration (Only on the First Startup)
