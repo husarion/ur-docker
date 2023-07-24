@@ -1,0 +1,40 @@
+def unnamed():
+  global _hidden_verificationVariable=0
+  step_count_9eaef195_c8b5_422a_b13e_3022bc8762f9 = 0.0
+  thread Step_Counter_Thread_dd5f467d_6047_420a_b631_532d9ca03b28():
+    while (True):
+      step_count_9eaef195_c8b5_422a_b13e_3022bc8762f9 = step_count_9eaef195_c8b5_422a_b13e_3022bc8762f9 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_dd5f467d_6047_420a_b631_532d9ca03b28()
+  set_tcp(p[0.0,0.0,0.0,0.0,0.0,0.0])
+  set_gravity([0.0, 0.0, 9.82])
+  set_tool_communication(False, 115200, 0, 1, 1.5, 3.5)
+  set_tool_output_mode(0)
+  set_tool_digital_output_mode(0, 1)
+  set_tool_digital_output_mode(1, 1)
+  set_tool_voltage(0)
+  set_target_payload(0.100000, [0.000000, 0.000000, 0.000000], [0.000033, 0.000033, 0.000033, 0.000000, 0.000000, 0.000000])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_safety_mode_transition_hardness(1)
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  while (True):
+    $ 2 "Robot Program"
+    # begin: URCap Program Node
+    #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+    #   Type: External Control
+    $ 3 "Control by 10.15.20.3"
+popup("The connection to the remote PC at 10.15.20.3:50002 could not be established. Reason: Connection refused (Connection refused)","Receive program failed", False, True, blocking=True)
+sync()    # end: URCap Program Node
+  end
+end
