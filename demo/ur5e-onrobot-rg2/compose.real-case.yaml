@@ -31,7 +31,7 @@ services:
 
   rviz:
     image: husarion/ur:noetic
-    container_name: rviz-gpu
+    container_name: rviz
     restart: on-failure
     network_mode: host
     ipc: host
